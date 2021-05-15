@@ -8,10 +8,9 @@
 </head>
 <body>
 <?php
-    echo var_dump(1==2);
-    echo var_dump(1==1);
-    echo var_dump("1"==1);  #true...!
-    echo var_dump("abc"=="abcc");
+    #http://localhost/firstapp/helloworld.php?id=conative&password=asdf
+    echo "환영합니다 ".$_GET['id']."님, 안녕하세용.";
+    echo "비밀번호는 ".$_GET['password']."네요.";
 ?>
 </body>
 </html>
