@@ -8,8 +8,10 @@
 </head>
 <body>
 <?php
-    $first = "Coding";
-    echo $first." everybody";
+    echo var_dump(1==2);
+    echo var_dump(1==1);
+    echo var_dump("1"==1);  #true...!
+    echo var_dump("abc"=="abcc");
 ?>
 </body>
 </html>
