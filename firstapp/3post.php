@@ -13,13 +13,15 @@
                 echo $i;
             }
         }else{
-            hello();
+            $world = " world";
+            echo hello($world);
         }
     ?>
 
     <?php
-        function hello(){
-            echo "hello";
+        function hello($msg){
+            echo "hello".$msg;
+            return 13;
         }
     ?>
 </body>
