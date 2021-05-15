@@ -8,16 +8,8 @@
 </head>
 <body>
 <?php
-    // var_dump(1234);
-    // var_dump("1234");
-    // echo "hello"." "."world";
-    // echo 'i say "hello"';
-    
-    $a = 1;
-    echo $a + 1;
-    echo "<br />";  #주석! 
-    $a = 2;         /* 이것도 주석! */
-    print $a + 1;   // echo와 print는 같은 의미.
+    $first = "Coding";
+    echo $first." everybody";
 ?>
 </body>
 </html>
