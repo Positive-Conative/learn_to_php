@@ -12,6 +12,7 @@
             for($i = 0; $i<5; $i++){
                 echo $i;
             }
+            echo hello();
         }else{
             $world = " world";
             echo hello($world);
@@ -19,7 +20,7 @@
     ?>
 
     <?php
-        function hello($msg){
+        function hello($msg=" none"){
             echo "hello".$msg;
             return 13;
         }
