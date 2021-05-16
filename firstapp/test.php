@@ -1,9 +1,12 @@
 <?php
-    //Composer..! <의존성 관리>
-    require 'vendor/autoload.php';
-    use Michelf\MarkdownExtra;
-    $parser = new MarkdownExtra;
-    $parser->fn_id_prefix = "post22-";
-    $my_text = "#큰 글씨!";   //#은 h1, ##은 h2다.
-    echo $my_html = $parser->transform($my_text);
+    $file = 'readme.txt';
+    $newfile = 'test.txt.bak';
+
+    //      원본파일 복사할파일
+    //  참일경우 성공, 거짓일경우 실패
+    if(!copy($file, $newfile)){
+        echo "failed to copy $file...\n";
+    }
+
+    
 ?>
