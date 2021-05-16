@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form test</title>
+    <title>test</title>
 </head>
 <body>
     <?php
-        echo "ID:".$_POST['id']." PW:".$_POST['password']
+        function welcome(){
+            return 'hello!!';
+        }
+        echo welcome();
     ?>
 </body>
 </html>
