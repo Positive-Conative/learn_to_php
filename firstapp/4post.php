@@ -8,18 +8,20 @@
 </head>
 <body>
     <?php
-       
-        function uit(){
-            return ['kdh', 'kyj', 'ksy', 'lgh', 'sjh', 'jsw'];
+        //연관배열
+        $grades = array('conative'=>100, 'kyj'=>80, 'hw'=>35);
+        echo $grades['conative']."<br />";
+
+        // $grades['conative'] = 100;
+        // $grades['kyj'] = 80;
+        // $grades['hw'] = 35;
+        // var_dump($grades);
+
+
+        //열거
+        foreach($grades as $key => $value){
+            echo "key: {$key} value: {$value} <br />";
         }
-        $members = uit();
-
-        for($i = 0; $i<count($members); $i++){
-            //Uppercase first
-            echo ucfirst($members[$i]).'<br />';
-        }
-
-
     ?>
 </body>
 </html>
