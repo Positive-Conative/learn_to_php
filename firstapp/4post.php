@@ -8,16 +8,18 @@
 </head>
 <body>
     <?php
-        // $class = Array("hello", "world");
-        // $class1 = ["Hello", "World"];
-        // echo $class[0];
-        // echo $class1[0];
-        function hello(){
-            return ['hello', 'world'];
+       
+        function uit(){
+            return ['kdh', 'kyj', 'ksy', 'lgh', 'sjh', 'jsw'];
         }
-        // $tmp = hello();
-        // echo $tmp[1];    //world
-        echo hello()[1];    //world - php 5.4 이후버전부터 사용 가능
+        $members = uit();
+
+        for($i = 0; $i<count($members); $i++){
+            //Uppercase first
+            echo ucfirst($members[$i]).'<br />';
+        }
+
+
     ?>
 </body>
 </html>
