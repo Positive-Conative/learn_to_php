@@ -1,27 +1,29 @@
 <?php
-    // // 현재 디렉토리 확인
-    // echo getcwd().'<br>';
+    // var_dump($_FILES);
+    // name : 실제 이름
+    // type : 이미지, png타입이다
+    // tmp name : 임시 이름 - 서버의 임시 디렉토리에 들어가게 됨
+    // error : 에러 
+    // size : byte단위 크기
 
-    // // 위치 이동
-    // chdir('../');
+    // 에러 출력 -> 트러블슈팅 편하게 하는 옵션
+    ini_set("display_errors", "1");
 
-    // echo getcwd().'<br>';
+    // 임시 디렉토리에서 파일 디렉토리로 옮기는 변수
+    $uploaddir = 'C:\Bitnami\wampstack-8.0.5-0\apache2\htdocs\upload\files\\'; //끝에 \\붙여야함.
     
-    // //현재 디렉토리 사용
-    // $dir = './';
+    // 보안을 위해 basename으로 경로 삭제
+    $uploadfile = $uploaddir . basename($_FILES['myfile']['name']); //name : 그 파일의 원래 이름
+    echo '<pre>';
 
-    // //현재 디렉토리에 대한 파일들 출력
-    // $file1 = scandir($dir);     // 일반
-    // $file2 = scandir($dir, 1);  // 1 옵션 : 정렬순서 바꾸기
-    
-    // //출력
-    // print_r($file1);
-    // print_r($file2);
-
-    //폴더만들기
-    mkdir("1/2/3/4",    // 디렉토리명
-           0700,        //권한
-           true         //첫 번째 인자의 경로가 만약 없다면 만들어줄까?
-    );
-
+    // 파일 이동                  실제 파일의 경로(이름)   $_FILES의 임시디렉토리 파일  이동경로
+    if (move_uploaded_file($_FILES['myfile']['tmp_name'], $uploadfile)) {
+        echo "파일이 유효하고, 성공적으로 업로드 되었습니다.\n";
+    } else {
+        print "파일 업로드 공격의 가능성이 있습니다!\n";
+    }
+    echo '자세한 디버깅 정보입니다:';
+    print_r($_FILES);
+    print "</pre>";
 ?>
+<img src="../upload/files/<?=$_FILES['myfile']['name']?>" />
