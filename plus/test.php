@@ -82,9 +82,8 @@
     //상수 TEST
 
     // $a = 100;
-    // $b = &$a;
+    // $b = $a;
     // define("HELLO", $b);
-    // $a = 10;
     // echo HELLO;
 ?>
 
@@ -98,9 +97,9 @@
     // 요상한 변수 값 지정
     // $a = "hello";
     // $$a = "world";
-    // echo $a;
-    // echo "aa $$a";
-    // print "AA$$a"
+    // echo $a."<br>";
+    // echo "$$a"."<br>";
+    // echo "{$$a}"."<br>";
 ?>
 
 <?php
@@ -134,7 +133,7 @@
 
 <?php
     //Defined : define 된 것이 있는지 확인하기.
-    // @ define("HELLO", "world");
+    // define("HELLO", "world");
 
     // if(defined("HELLO1")) echo "Exists";
     // else echo "Not exists";
@@ -148,8 +147,8 @@
 <?php
     //IF문 동일.
 
-    //특이한 IF문
-    // $a = 4;
+    // 특이한 IF문
+    // $a = 2;
     // if($a == 1): 
     //     echo "1입니다!";
     // elseif($a == 2):
@@ -188,22 +187,71 @@
     //에러코드를 뱉어내며 종료하기.
     // $filename = '/path/to/test';
 
-    // exit = die >> 같음. 
+    // // exit = die >> 같음. 
     // @$file = fopen($filename, 'r') or exit("파일이 없다!");
-    // @$file = fopen($filename, 'r') or die("파일이 없다!");   
-
-    //이후는 실행되지 않는다.
+    // // @$file = fopen($filename, 'r') or die("파일이 없다!");   
+    
+    
     // echo "hello";
     // exit(404);
-    // echo "world";
+    // echo "world";   // 이후는 실행되지 않는다.
 ?>
 
 <?php
     //return --> includer.php에서 부름.
-    $b = 3 + 5;
+    // $b = 3 + 5;
 
-    return ($b);
-    echo "hello ";
+    // return ($b);
+    // echo "hello ";
+?>
+
+<?php
+    // $name[] = "conative";
+    // $name[] = "kyj";
+    // $name[] = "hello";
+
+    // // == 
+
+    // $name = ["conative", "kyj", "hello"];
+
+    // ----------
+    // $name = ["nName"=>"conative", "kyj", "hello"];  //이렇게 실행할 경우 kyj, hello에는 0과 1이 들어간다.
+    // $name = ["nName"=>"conative", "name" => "kyj", "comment"=>"hello"];
+    // foreach($name as $key => $value){
+    //     // echo $key." : ".$value."<br>";
+    //     print $key."?".$value."<br/>";
+    // }
+
+    // $myArray = array(3=>"hello","world",0=>"it is","php");
+
+    // foreach($myArray as $key => $value){
+    //     echo "$key : $value <br>";
+    // }
+
+
+    //다차원 배열
+    // $hello = array(
+    //     "hello" => array(
+    //         "h",
+    //         "E",
+    //         "l",
+    //         "L",
+    //         "o"
+    //     ),
+    //     "world" => array(
+    //         "w",
+    //         "O",
+    //         "r",
+    //         "L",
+    //         "d"
+    //     )
+    // );
+    // echo $hello["hello"][1];    //E
+    // print_r(array_change_key_case($hello, CASE_UPPER));
+
+    // foreach($hello as $key => $value){
+    //     echo "$key + $value[1]<br>";
+    // }
 ?>
 </body>
 </html>
